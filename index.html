@@ -28,25 +28,21 @@
             border-radius: 0.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .blog-post {
-            margin-bottom: 2rem;
+        .post {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #e9ecef;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
-        .blog-post h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #6f42c1;
+        .post h3 {
+            margin: 0 0 0.5rem 0;
         }
-        .blog-post p {
-            font-size: 1rem;
+        .post .post-meta {
+            font-size: 0.9rem;
             color: #6c757d;
-        }
-        .blog-post a {
-            color: #6f42c1;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .blog-post a:hover {
-            text-decoration: underline;
+            display: flex;
+            justify-content: space-between;
         }
         footer {
             background: #6c757d;
@@ -63,7 +59,7 @@
     </header>
     <main>
         <div class="container">
-            <div class="content-box">
+            <div class="private_info_box content-box">
                 <dl>
                     <dt>
                         <strong id="nickname">THE BOYZ_영훈</strong>
@@ -83,24 +79,27 @@
             </div>
             <div class="content-box">
                 <h2 class="text-center">블로그 게시물</h2>
-                <div id="blog-posts">
-                    <!-- 블로그 게시물 시작 -->
+                <div id="post-list">
+                    <!-- 게시물 목록 시작 -->
                     <script>
                         const totalPosts = 135; // 게시글 총 개수
                         const author = "THE BOYZ_영훈";
 
                         for (let i = 1; i <= totalPosts; i++) {
                             document.write(`
-                                <div class='blog-post'>
+                                <div class="post">
                                     <h3>게시글 ${i}</h3>
-                                    <p>작성자: ${author}</p>
-                                    <p>이 게시물은 THE BOYZ 팬카페의 게시글 ${i}입니다. 더 읽으시려면 아래 링크를 클릭하세요.</p>
-                                    <a href='fromtheboyzyh${i}.html'>더 읽기</a>
+                                    <div class="post-meta">
+                                        <span>작성자: ${author}</span>
+                                        <span>게시물 번호: ${i}</span>
+                                    </div>
+                                    <p>이 게시물은 THE BOYZ_영훈의 ${i}번째 게시글입니다.</p>
+                                    <a href="fromtheboyzyh${i}.html" class="btn btn-primary">더 읽기</a>
                                 </div>
                             `);
                         }
                     </script>
-                    <!-- 블로그 게시물 끝 -->
+                    <!-- 게시물 목록 끝 -->
                 </div>
             </div>
         </div>
