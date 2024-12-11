@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBS Main Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #6f42c1;
+            color: #fff;
+            padding: 1rem;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .post-list {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .post-list a {
+            color: #6f42c1;
+            text-decoration: none;
+        }
+        .post-list a:hover {
+            text-decoration: underline;
+        }
+        .private_info_box {
+            background: #e9ecef;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #6c757d;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .user_img img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <h1>BBS Main Page</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="private_info_box">
+                <dl>
+                    <dt>
+                        <strong id="nickname">THE BOYZ_영훈</strong>
+                    </dt>
+                    <dd class="user_img">
+                        <div class="box"><img src="https://t1.daumcdn.net/cafe_image/img_profile/profile_kero.png" width="48" height="48" alt="회원 사진"></div>
+                    </dd>
+                    <dd>
+                        <span class="bar2 first_bar">|</span>
+                        <img src="//t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/h_level_30.gif" class="rating" alt="회원등급 아이콘">
+                        THE BOYZ
+                    </dd>
+                    <dd style="clear:both;">총 방문일 <span class="txt_point">903</span>회</dd>
+                    <dd>총 게시물 <span class="txt_point">164</span>개</dd>
+                    <dd>총 댓글 <span class="txt_point">75</span>개</dd>
+                </dl>
+            </div>
+            <div class="post-list">
+                <h2 class="text-center">게시글 목록</h2>
+                <ul class="list-group">
+                    <!-- 게시글 목록 시작 -->
+                    <script>
+                        const totalPosts = 100; // 게시글 총 개수
+                        const author = "THE BOYZ_영훈";
+
+                        for (let i = 1; i <= totalPosts; i++) {
+                            document.write(`<li class='list-group-item'><a href='fromtheboyzyh${i}.html'>게시글 ${i} - ${author}</a></li>`);
+                        }
+                    </script>
+                    <!-- 게시글 목록 끝 -->
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 THE BOYZ_영훈</p>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
