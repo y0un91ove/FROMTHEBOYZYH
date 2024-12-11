@@ -28,16 +28,25 @@
             border-radius: 0.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .post-list a {
+        .blog-post {
+            margin-bottom: 2rem;
+        }
+        .blog-post h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #6f42c1;
+        }
+        .blog-post p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        .blog-post a {
             color: #6f42c1;
             text-decoration: none;
+            font-weight: bold;
         }
-        .post-list a:hover {
+        .blog-post a:hover {
             text-decoration: underline;
-        }
-        .private_info_box {
-            background: #e9ecef;
-            margin-bottom: 1.5rem;
         }
         footer {
             background: #6c757d;
@@ -45,9 +54,6 @@
             padding: 1rem;
             text-align: center;
             margin-top: 2rem;
-        }
-        .user_img img {
-            border-radius: 50%;
         }
     </style>
 </head>
@@ -57,7 +63,7 @@
     </header>
     <main>
         <div class="container">
-            <div class="private_info_box content-box">
+            <div class="content-box">
                 <dl>
                     <dt>
                         <strong id="nickname">THE BOYZ_영훈</strong>
@@ -75,20 +81,27 @@
                     <dd>총 댓글 <span class="txt_point">75</span>개</dd>
                 </dl>
             </div>
-            <div class="post-list content-box">
-                <h2 class="text-center">게시글 목록</h2>
-                <ul class="list-group">
-                    <!-- 게시글 목록 시작 -->
+            <div class="content-box">
+                <h2 class="text-center">블로그 게시물</h2>
+                <div id="blog-posts">
+                    <!-- 블로그 게시물 시작 -->
                     <script>
                         const totalPosts = 135; // 게시글 총 개수
                         const author = "THE BOYZ_영훈";
 
                         for (let i = 1; i <= totalPosts; i++) {
-                            document.write(`<li class='list-group-item'><a href='fromtheboyzyh${i}.html'>게시글 ${i} - ${author}</a></li>`);
+                            document.write(`
+                                <div class='blog-post'>
+                                    <h3>게시글 ${i}</h3>
+                                    <p>작성자: ${author}</p>
+                                    <p>이 게시물은 THE BOYZ 팬카페의 게시글 ${i}입니다. 더 읽으시려면 아래 링크를 클릭하세요.</p>
+                                    <a href='fromtheboyzyh${i}.html'>더 읽기</a>
+                                </div>
+                            `);
                         }
                     </script>
-                    <!-- 게시글 목록 끝 -->
-                </ul>
+                    <!-- 블로그 게시물 끝 -->
+                </div>
             </div>
         </div>
     </main>
